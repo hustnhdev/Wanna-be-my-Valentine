@@ -3,24 +3,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wanna be my Valentine?</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brush+Script+MT&display=swap">
-    <link href="/Wanna-be-my-Valentine/style.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
 </head>
 
 <body>
     <div class="title">
         <p style="color: #3760C9; font-size: 35px;">
-            !! Cậu có một bức thư chưa đọc nè !!
+            !! Ciao, cậu có một bức thư chưa đọc nè !!
             <br />
         </p>
     </div>
-    <div class="wrapper">
-        <div class="lid one"></div>
-        <div class="lid two"></div>
-        <div class="envelope"></div>
-        <div class="letter">
-            <p>Hello</p>
+
+    <div class="envelope_container">
+        <div class="wrapper">
+            <div class="lid one"></div>
+            <div class="lid two"></div>
+            <div class="envelope"></div>
+            <div class="letter" onclick="openPopup()">
+                <p>
+                    ____________________________<br />
+                    <br />
+                    <bold><strong>Chào cậu, <br /> </strong></bold>
+                    Cảm ơn cậu đã xem thư!<br />
+                    <br />
+                    Thực lòng mà nói, tớ rất vui vì cậu đã xuất hiện trong cuộc sống tẻ nhạt này. Nỗi buồn len lỏi vào cuộc sống của tớ nhiêu hơn niềm vui. <br />
+                </p>
+            </div>
         </div>
     </div>
+
     <div class="heart-container">
         <div class="heart"></div>
         <div class="heart"></div>
@@ -31,9 +42,18 @@
         <div class="heart"></div>
     </div>
     <hr class="timeline-line">
+
+    <div id="popup" class="popup-container" onclick="closePopup()">
+        <div class="popup-content" onclick="event.stopPropagation();">
+            <p>Your popup content here</p>
+            <span class="popup-close" onclick="closePopup()">Close</span>
+        </div>
+    </div>
+
     <script src="scripts.js"></script>
 </body>
 
 <footer>
     <p>&copy; 2024 Wanna be my Valentine?. Made by DNH.</p>
 </footer>
+

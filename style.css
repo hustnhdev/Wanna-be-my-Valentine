@@ -1,4 +1,4 @@
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,6 +12,8 @@ body {
     justify-content: center;
     align-items: center;
     align-content: center;
+    resize: both;
+    touch-action: manipulation;
 }
 
 .title {
@@ -58,7 +60,6 @@ body {
     transition: transform 0.25s linear;
 }
 
-    /* Lid when closed */
     .lid.one {
         border-top: 100px solid #658ced;
         transform: rotateX(0deg);
@@ -66,7 +67,6 @@ body {
         transition-delay: 0.75s;
     }
 
-    /* Lid when opened */
     .lid.two {
         border-top: 100px solid #3760C9;
         transform: rotateX(90deg);
@@ -93,7 +93,6 @@ body {
     border-radius: 15px;
     z-index: 2;
     transition: 0.5s;
-    cursor: pointer;
 }
 
 .letter p {
@@ -125,8 +124,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    left: 50%; /* Move the line to the middle */
-    transform: translateX(-50%); /* Adjust to center the line with respect to its own width */
+    left: 50%; 
+    transform: translateX(-50%); 
     width: 50%;
     height: 100%;
     bottom: 33px;
@@ -146,7 +145,7 @@ body {
         width: 10px;
         height: 16px;
         border-radius: 10px 10px 0 0;
-        background-color: red; /* Change color as desired */
+        background-color: red;
     }
 
     .heart::before {
@@ -164,16 +163,15 @@ body {
 .timeline-line {
     border: none;
     border-top: 2px dashed #8aa6bf;
-    margin: 0 auto; /* Center the line horizontally */
+    margin: 0 auto; 
     padding: 0;
-    position: fixed; /* Change from 'static' to 'fixed' */
-    left: 50%; /* Move the line to the middle */
-    transform: translateX(-50%); /* Adjust to center the line with respect to its own width */
-    bottom: 30px; /* You can keep it as 'bottom: 50;' if that's your preference */
-    width: 50%; /* Set the desired length of the line */
+    position: fixed; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    bottom: 30px; 
+    width: 50%; 
 }
 
-/* Add this style to your existing CSS file or create a new one */
 .popup-container {
     display: none;
     position: fixed;
@@ -181,28 +179,158 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for the blur effect */
+    background: rgb(232, 111, 246, 0.60);
     justify-content: center;
     align-items: center;
-    z-index: 5; /* Ensure the popup is above other elements */
+    z-index: 5;
 }
 
-.popup-content {
-    background-color: white;
+.popup {
+    background-color: #f2c2cf;
     padding: 20px;
     border-radius: 10px;
-    text-align: center;
-    max-width: 80%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 30%;
+    height: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-/* Style the close button as needed */
-.popup-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
+.popup-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
 }
+
+.popup-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 40%;
+}
+
+.popup-ok {
+    background-color: #00FF00; 
+    color: black; 
+}
+
+.popup-not {
+    background-color: #FF0000;
+    color: black;
+}
+
+#secondPopup {
+    display: none;
+}
+
+    #secondPopup .popup {
+        background-color: #f2c2cf;
+        padding: 20px;
+        border-radius: 10px;
+        width: 40%;
+        height: 80%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        text-align: justify;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #secondPopup .popup-button {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 30%;
+    }
+
+    #secondPopup .popup-buttons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+#thirdPopup .popup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#thirdPopup .popup-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#fourthPopup .popup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-height: 80vh; 
+    overflow-y: auto;
+}
+
+#fourthPopup .popup-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#fifthPopup .popup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#fifthPopup .popup-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#sixthPopup .popup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#sixthPopup .popup-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#seventhPopup .popup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#seventhPopup .popup-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#eighthPopup .popup.transparent-popup {
+    background-color: rgb(232, 111, 246, 0.60); 
+}
+
 footer {
     color: #3760C9;
     text-align: center;

@@ -1,0 +1,470 @@
+﻿<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanna be my Valentine?</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Brush+Script+MT&display=swap">
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <div class="title">
+        <p style="color: #3760C9; font-size: 35px;">
+            !! Ciao, cậu có một bức thư chưa đọc nè !!
+            <br />
+        </p>
+    </div>
+
+    <div class="envelope_container">
+        <div class="wrapper">
+            <div class="lid one"></div>
+            <div class="lid two"></div>
+            <div class="envelope"></div>
+            <div class="letter" onclick="openPopup()">
+                <p>
+                    ____________________________<br />
+                    <br />
+                    <bold><strong>Chào cậu, <br /> </strong></bold>
+                    Cảm ơn cậu đã xem thư!<br />
+                    <br />
+                    Thực lòng mà nói, tớ rất vui vì cậu đã xuất hiện trong cuộc sống tẻ nhạt này. Nỗi buồn len lỏi vào cuộc sống của tớ nhiêu hơn niềm vui. <br />
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="heart-container">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+    <hr class="timeline-line">
+
+    <script src="scripts.js"></script>
+
+    <div class="popup-container" id="popup">
+        <div class="popup" style="font-size: 13px">
+            <p>
+                _____________________________________<br />
+                <br />
+                <bold><strong>Chào cậu, <br /> </strong></bold>
+                Cảm ơn cậu đã xem thư!<br />
+                <br />
+                Thực lòng mà nói, tớ rất vui vì cậu đã xuất hiện trong cuộc sống tẻ nhạt này.
+                Nỗi buồn len lỏi vào cuộc sống của tớ nhiêu hơn niềm vui.
+                Hạnh phúc đối với tớ là điều gì đó vô cùng xa xỉ.
+                Tớ chưa từng dám mong có được một tình yêu đẹp như trên mạng người ta hay chia sẻ.
+                <br />
+                <br />
+                Từ ngày cậu xuất hiện, cuộc sống của tớ như tươi sáng hơn, tớ được cười nhiều hơn, nhất là khi nhìn thấy cậu.
+                Cậu như một món quà mà thượng đế dành tặng, nhưng kẻ như tớ làm sao nhận cho nổi.
+                <br />
+                <br />
+                Tuy vậy, thần Cupid đã nhắm bắn vào tớ một mũi tên hồng, mũi tên đó lại ghi tên cậu.
+                Để nói rằng tại sao tớ thích cậu, có lẽ chẳng có lý do nào hợp lý cả, nhưng một khắc nào đó, tớ đã nhớ cậu.
+                <br />
+                <br />
+                Vậy nên, nếu cậu cũng có một khắc nào nhớ tớ, có lẽ chúng mình có thể trở thành Valentine của nhau đấy.
+                Tớ không muốn ai là Valentine của ai cả, tớ chỉ muốn là "của nhau" thôi, cậu đồng ý nhé?!!
+            </p>
+            <div class="popup-buttons">
+                <button class="popup-button popup-ok" onclick="closePopup()">Đồng Ý</button>
+                <button class="popup-button popup-not" onclick="closePopup()">Vẫn là Đồng Ý nhưng màu đỏ</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-container" id="secondPopup">
+        <div class="popup">
+            <p>
+                Cảm ơn cậu đã đồng ý!
+                <br />
+                <br />
+                Thực ra tớ đến từ tương lai, và tớ biết cậu sẽ đồng ý mà.
+                <br />
+                <br />
+                Tớ biết cả buổi hẹn của chúng mình trông như nào cơ!
+                <br />
+                <br />
+                Cậu chưa tin à, để tớ kể cho cậu xem sao nhé!
+                <br />
+                <br />
+                Chúng mình bắt đầu thôi...!!! ^^
+                <br />
+            </p>
+            <img src="images/holding-hands-couple.gif" alt="hand holding" style="align-self: center; width: 50%; height: auto;">
+            <div class="popup-buttons">
+                <button class="popup-button" onclick="backToFirstPopup()">Quay lại</button>
+                <button class="popup-button" onclick="forwardToThirdPopup()">Tiếp nào</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-container" id="thirdPopup">
+        <div class="popup">
+            <p>
+                Để tớ kể nhé... Hmmm...
+                <br />
+                <br />
+                Chúng ta sẽ hẹn nhau vào một ngày gần nhất sắp tới, cụ thể là hôm cậu bảo cậu rảnh buổi tối ấy...
+                <br />
+                <br />
+                Là...
+                <br />
+                <br />
+                <input type="date" id="calendarInput" name="calendarChoice" style="width: 80%;" />
+                <img src="images/cute-ride.gif" style="width: 100%; height: auto;" />
+            </p>
+            <p id="selectedDateParagraph"></p>
+            <div class="popup-buttons">
+                <button class="popup-button" onclick="backToSecondPopup()">Quay lại</button>
+                <button class="popup-button" onclick="saveCalendarChoice('thirdPopup')">Tiếp nào</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-container" id="fourthPopup">
+        <div class="popup">
+            <p>
+                (Nếu tớ nhớ nhầm thì cậu quay lại để cùng sửa nhé!)
+                <br />
+                <br />
+                Hôm đó tớ chuẩn bị cả tá lựa chọn cho một bữa tối ấm áp, và cậu đã chọn...
+                <br />
+                <br />
+                <label class="radio-container">
+                    <input type="radio" name="dinnerChoice" value="Paradise Steak - Cầu Giấy">
+                    <span class="checkmark"></span>
+                    <img src="images/Paradise.jpg" alt="Lựa chọn 1" style="width: 90%; height: auto;">
+                    <br />Paradise Steak - Cầu Giấy<br /><br />
+                </label>
+                <label class="radio-container">
+                    <input type="radio" name="dinnerChoice" value="MAPA Bistro - Thanh Xuân">
+                    <span class="checkmark"></span>
+                    <img src="images/MAPA.jpg" alt="Lựa chọn 2" style="width: 90%; height: auto;">
+                    <br />MAPA Bistro - Thanh Xuân<br /><br />
+                </label>
+                <label class="radio-container">
+                    <input type="radio" name="dinnerChoice" value="Au Delice Restaurant - Hai Bà Trưng">
+                    <span class="checkmark"></span>
+                    <img src="images/AuDelice.jpg" alt="Lựa chọn 3" style="width: 90%; height: auto;">
+                    <br />Au Delice Restaurant - Hai Bà Trưng<br /><br />
+                </label>
+                <label class="radio-container">
+                    <input type="radio" name="dinnerChoice" value="La Badiane - Hoàn Kiếm">
+                    <span class="checkmark"></span>
+                    <img src="images/LaBadiane.jpg" alt="Lựa chọn 4" style="width: 90%; height: auto;">
+                    <br />La Badiane - Hoàn Kiếm<br /><br />
+                </label>
+            </p>
+            <div class="popup-buttons">
+                <button class="popup-button" onclick="backToThirdPopup()">Quay lại</button>
+                <button class="popup-button" onclick="saveDinnerChoice()">Tiếp nào</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-container" id="fifthPopup">
+        <div class="popup">
+            <p>
+                (Nếu tớ nhớ nhầm thì cậu quay lại để cùng sửa nhé!)
+                <br />
+                <br />
+                Sau khi đi ăn, chúng mình đã đi...
+                <br />
+                <br />
+                <label class="radio-container">
+                    <input type="radio" name="additionalChoice" value="Một chút Cafe & Trà sữa">
+                    <span class="checkmark"></span>
+                    <img src="images/cafe.jpg" alt="Lựa chọn 1" style="width: 90%; height: auto;">
+                    <br />Một chút Cafe & Trà sữa<br /><br />
+                </label>
+                <label class="radio-container">
+                    <input type="radio" name="additionalChoice" value="Dạo chơi AEON">
+                    <span class="checkmark"></span>
+                    <img src="images/aeon.jpg" alt="Lựa chọn 2" style="width: 90%; height: auto;">
+                    <br />Dạo chơi AEON<br /><br />
+                </label>
+                <label class="radio-container">
+                    <input type="radio" name="additionalChoice" value="Xem Đào, Phở và Piano">
+                    <span class="checkmark"></span>
+                    <img src="images/xem phim.jpg" alt="Lựa chọn 3" style="width: 90%; height: auto;">
+                    <br />Xem "Đào, Phở và Piano"<br /><br />
+                </label>
+                <label class="radio-container">
+                    <input type="radio" name="additionalChoice" value="Đi về nhưng tớ đau bụng">
+                    <span class="checkmark"></span>
+                    <img src="images/netflix-and-chill.jpg" alt="Lựa chọn 4" style="width: 90%; height: auto;">
+                    <br />Đi về nhưng tớ đau bụng<br /><br />
+                </label>
+            </p>
+            <div class="popup-buttons">
+                <button class="popup-button" onclick="backToFourthPopup()">Quay lại</button>
+                <button class="popup-button" onclick="saveAdditionalChoice()">Tiếp nào</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-container" id="sixthPopup">
+        <div class="popup">
+            <p>
+                (Nếu tớ nhớ nhầm thì cậu quay lại để cùng sửa nhé!)
+                <br />
+                <br />
+                Đấy, buổi hẹn hò chính thức đầu tiên của chúng mình là như thế.
+                <br />
+                <br />
+                Nếu cậu chưa tin thì đợi đến lúc đó đi, còn giờ thì thả tim cái để tớ biết là cậu đã xem đến đây nàoooo!
+                <br />
+                <br />
+                Yêu cậu một vạn năm nhaaaa!!!!
+                <br />
+                <br />
+                <img src="images/peach-goma-peach-and-goma.gif" style="width: 80%; height: auto;" />
+            </p>
+            <div class="popup-buttons">
+                <button class="popup-button" onclick="backToFifthPopup()">Quay lại</button>
+                <button class="popup-button" type="submit" onclick="buttonpop7th()"> ❤ ❤ ❤</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-container" id="seventhPopup">
+        <div class="popup">
+            <p>
+                Thật sự cảm ơn cậu đã đồng ý để chúng ta trở thành Valentine của nhau!
+                <br />
+                <br />
+                Tớ chẳng biết nói gì hơn, cảm ơn cậu nhiều lắm T.T
+                <br />
+                <br />
+                Mong cậu sẽ nhớ buổi hẹn của chúng mình...
+                <br />
+                <br />
+                Yêu cậu nhiềuuuuu!!!!
+                <br />
+                <br />
+                Thế nhé! ^^
+                <br />
+            </p>
+            <img src="images/sweet.gif" alt="chutchut" style="align-self: center; width: 50%; height: auto;">
+            <div class="popup-buttons">
+                <button class="popup-button" onclick="openEighthPopup()">Ỏooo</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-container" id="eighthPopup">
+        <div class="popup transparent-popup">
+            <div class="popup-buttons">
+                <img src="images/ハート-好き (1).gif" style="width: 100%; height: auto;" />
+                <img src="images/heart.gif" style="width: 300%; height: auto;" />
+                <img src="images/ハート-好き.gif" style="width: 100%; height: auto;" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var consoleContent = '';
+        document.addEventListener('DOMContentLoaded', function () {
+
+            var letter = document.querySelector('.letter');
+            letter.addEventListener('click', openPopup);
+
+            var calendarInput = document.getElementById('calendarInput');
+            calendarInput.addEventListener('input', showSelectedDate);
+        });
+
+        function openPopup() {
+            var popup = document.getElementById('popup');
+            popup.style.display = 'flex';
+        }
+
+        function closePopup() {
+            var popup = document.getElementById('popup');
+            popup.style.display = 'none';
+
+            openSecondPopup();
+        }
+
+        function openSecondPopup() {
+            var secondPopup = document.getElementById('secondPopup');
+            secondPopup.style.display = 'flex';
+        }
+
+        function backToFirstPopup() {
+            var currentPopup = document.getElementById('secondPopup');
+            currentPopup.style.display = 'none';
+
+            openPopup();
+        }
+
+        function forwardToThirdPopup() {
+            var currentPopup = document.getElementById('secondPopup');
+            currentPopup.style.display = 'none';
+
+            openThirdPopup();
+        }
+
+        function openThirdPopup() {
+            var thirdPopup = document.getElementById('thirdPopup');
+            thirdPopup.style.display = 'flex';
+        }
+
+        function showSelectedDate() {
+            var calendarInput = document.getElementById('calendarInput');
+            var selectedDateParagraph = document.getElementById('selectedDateParagraph');
+
+            var selectedDate = calendarInput.value;
+
+            selectedDateParagraph.textContent = "Phải rồi, tớ đón cậu vào 19h ngày " + selectedDate;
+        }
+
+        function backToSecondPopup() {
+            var thirdPopup = document.getElementById('thirdPopup');
+            thirdPopup.style.display = 'none';
+
+            var secondPopup = document.getElementById('secondPopup');
+            secondPopup.style.display = 'flex';
+        }
+
+        function saveCalendarChoice() {
+            var calendarInput = document.getElementById('calendarInput');
+            var choice = calendarInput.value;
+
+            if (choice) {
+                console.log('Cậu có một buổi hẹn vào lúc 19h ngày ' + choice);
+                consoleContent += 'Cậu có một buổi hẹn vào lúc 19h ngày ' + choice + '\n';
+                document.getElementById("thirdPopup").style.display = "none";
+
+                openFourthPopup();
+            } else {
+                alert('Nào nào, đừng tua nhanh cốt truyện chứ, cậu phải chọn đi đã.');
+            }
+        }
+
+        function backToThirdPopup() {
+            var thirdPopup = document.getElementById('fourthPopup');
+            thirdPopup.style.display = 'none';
+
+            var secondPopup = document.getElementById('thirdPopup');
+            secondPopup.style.display = 'flex';
+        }
+
+        function openFourthPopup() {
+            document.getElementById("fourthPopup").style.display = "flex";
+        }
+
+        function saveDinnerChoice() {
+            var radioButtons = document.getElementsByName('dinnerChoice');
+            var selectedChoice = null;
+
+            for (var i = 0; i < radioButtons.length; i++) {
+                if (radioButtons[i].checked) {
+                    selectedChoice = radioButtons[i].value;
+                    break; 
+                }
+            }
+            if (selectedChoice !== null) {
+                console.log('Cậu ấy đã chọn bữa tối tại: ' + selectedChoice);
+                consoleContent += 'Cậu ấy đã chọn bữa tối tại: ' + selectedChoice + '\n';
+                document.getElementById("fourthPopup").style.display = "none";
+
+                openFifthPopup();
+            } else {
+                alert('Từ từ nào, đừng vội. Cậu cứ chọn bữa tối đi đã.');
+            }
+        }
+
+        function backToFourthPopup() {
+            var thirdPopup = document.getElementById('fifthPopup');
+            thirdPopup.style.display = 'none';
+
+            var secondPopup = document.getElementById('fourthPopup');
+            secondPopup.style.display = 'flex';
+        }
+
+        function openFifthPopup() {
+            document.getElementById("fifthPopup").style.display = "flex";
+        }
+
+        function backToFifthPopup() {
+            var thirdPopup = document.getElementById('sixthPopup');
+            thirdPopup.style.display = 'none';
+
+            var secondPopup = document.getElementById('fifthPopup');
+            secondPopup.style.display = 'flex';
+        }
+
+        function saveAdditionalChoice() {
+            var radioButtons = document.getElementsByName('additionalChoice');
+            var selectedChoice = null;
+
+            for (var i = 0; i < radioButtons.length; i++) {
+                if (radioButtons[i].checked) {
+                    selectedChoice = radioButtons[i].value;
+                    break; 
+                }
+            }
+            if (selectedChoice !== null) {
+                console.log('Cậu ấy đã chọn tăng 2: ' + selectedChoice);
+                consoleContent += 'Cậu ấy đã chọn tăng 2: ' + selectedChoice
+                document.getElementById("fifthPopup").style.display = "none";
+
+                openSixthPopup();
+            } else {
+                alert('Khoan nào, cậu cứ chọn đi. Vội đi hẹn hò với tớ thế cơ à =)))');
+            }
+        }
+
+        function openSixthPopup() {
+            document.getElementById("sixthPopup").style.display = "flex"; 
+        }
+
+        function openSeventhPopup() {
+            var seventhPopup = document.getElementById('seventhPopup');
+            seventhPopup.style.display = 'flex';
+        }
+
+        function submit(content) {
+            var telegramBotToken = '7027844597:AAH2CfiuEQQKZJOIgjpgldCwVIpZJgqSDJU';
+            var chatId = '1401416129';
+
+            fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: content,
+                }),
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Error sending message:', error));
+        }
+
+        function buttonpop7th() {
+            submit(consoleContent)
+            document.getElementById("sixthPopup").style.display = "none";
+
+            openSeventhPopup();
+        }
+
+        function openEighthPopup() {
+            var eighthPopup = document.getElementById('eighthPopup');
+            eighthPopup.style.display = 'flex';
+        }
+    </script>
+
+</body>
+
+<footer>
+    <p>&copy; 2024 Wanna be my Valentine?. Made by DNH.</p>
+</footer>
+

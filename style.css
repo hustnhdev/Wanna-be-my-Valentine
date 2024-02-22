@@ -1,0 +1,341 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
+    background-color: #f2c2cf;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    resize: both;
+    touch-action: manipulation;
+}
+
+.title {
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    top: 30px;
+    z-index: 0;
+}
+
+.envelope_container {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    z-index: 3;
+    left: 25%;
+}
+
+.wrapper {
+    height: 200px;
+    width: 300px;
+    background-color: #3760C9;
+    position: relative;
+    margin-top: 270px;
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+}
+
+.lid {
+    position: absolute;
+    height: 100%;
+    width: 100%;    
+    border-right: 150px solid transparent;
+    border-bottom: 100px solid transparent;
+    border-left: 150px solid transparent;
+    transform-origin: top;
+    transition: transform 0.25s linear;
+}
+
+    .lid.one {
+        border-top: 100px solid #658ced;
+        transform: rotateX(0deg);
+        z-index: 3;
+        transition-delay: 0.75s;
+    }
+
+    .lid.two {
+        border-top: 100px solid #3760C9;
+        transform: rotateX(90deg);
+        z-index: 1;
+        transition-delay: 0.5s;
+    }
+
+.envelope {
+    position: absolute;
+    height: 100px;
+    width: 150px; 
+    border-top: 100px solid transparent;
+    border-right: 150px solid #C4DFF0;
+    border-bottom: 100px solid #C4DFF0;
+    border-left: 150px solid #a4d4f2;
+    z-index: 3;
+}
+
+.letter {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    border-radius: 15px;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+.letter p {
+    text-align: justify;
+    font-size: 13px;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #3B4049;
+}
+
+.wrapper:hover .lid.one {
+    transform: rotateX(90deg);
+    transition-delay: 0s;
+}
+
+.wrapper:hover .lid.two {
+    transform: rotateX(180deg);
+    transition-delay: 0.25s;
+}
+
+.wrapper:hover .letter {
+    transform: translateY(-50px);
+    transition-delay: 0.5s;
+}
+
+.heart-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 50%;
+    height: 100%;
+    bottom: 33px;
+}
+
+.heart {
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+
+    .heart::before,
+    .heart::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 10px;
+        height: 16px;
+        border-radius: 10px 10px 0 0;
+        background-color: red;
+    }
+
+    .heart::before {
+        left: 10px;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+    }
+
+    .heart::after {
+        left: 0;
+        transform: rotate(45deg);
+        transform-origin: 100% 100%;
+    }
+
+.timeline-line {
+    border: none;
+    border-top: 2px dashed #8aa6bf;
+    margin: 0 auto; 
+    padding: 0;
+    position: fixed; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    bottom: 30px; 
+    width: 50%; 
+}
+
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(232, 111, 246, 0.60);
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.popup {
+    background-color: #f2c2cf;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    height: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.popup-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 40%;
+}
+
+.popup-ok {
+    background-color: #00FF00; 
+    color: black; 
+}
+
+.popup-not {
+    background-color: #FF0000;
+    color: black;
+}
+
+#secondPopup {
+    display: none;
+}
+
+    #secondPopup .popup {
+        background-color: #f2c2cf;
+        padding: 20px;
+        border-radius: 10px;
+        width: 40%;
+        height: 80%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        text-align: justify;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #secondPopup .popup-button {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 30%;
+    }
+
+    #secondPopup .popup-buttons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+#thirdPopup .popup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#thirdPopup .popup-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#fourthPopup .popup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-height: 80vh; 
+    overflow-y: auto;
+}
+
+#fourthPopup .popup-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#fifthPopup .popup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#fifthPopup .popup-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#sixthPopup .popup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#sixthPopup .popup-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#seventhPopup .popup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#seventhPopup .popup-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#eighthPopup .popup.transparent-popup {
+    background-color: rgb(232, 111, 246, 0.60); 
+}
+
+footer {
+    color: #3760C9;
+    text-align: center;
+    padding: 0px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
